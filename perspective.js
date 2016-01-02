@@ -2,12 +2,12 @@
     var perspectiveStart = 1024;
     window.onresize = function () {
         for (var i = 0; i < el.length; i++) {
-            var currentEl = el[i];
-            var wrapperEl = wrap(currentEl, document.createElement('div'));
-            wrapperEl.style.perspective = '400px';
-            wrapperEl.style.width = '1px';
-            currentEl.style.transition = '1s';
-            el[i].style.transform = dynoRotate(perspectiveStart);
+            var currentEl = el[i],
+                wrapperEl = wrap(currentEl, document.createElement('div'));
+                wrapperEl.style.perspective = '400px';
+                wrapperEl.style.width = '1px';
+                currentEl.style.transition = '1s';
+                currentEl.style.transform = dynoRotate(perspectiveStart);
         }
     };
     function dynoRotate(perspectiveStart) {
