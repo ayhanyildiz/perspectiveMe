@@ -1,19 +1,20 @@
 (function (el) {
     var perspectiveStart = 1024,
-        perspectiveDirection = 'X';//'X' or ''
+        perspectiveDirection = 'Y';//'X' or ''
   
     window.onresize = function () {
+      var windowSize = window.innerWidth;
         for (var i = 0; i < el.length; i++) {
             var currentEl = el[i],
                 wrapperEl = wrap(currentEl, document.createElement('div'));
                 wrapperEl.style.perspective = '400px';
                 wrapperEl.style.width = '200px';
                 currentEl.style.transition = '1s';
-                currentEl.style.transform = dynoRotate(perspectiveStart,perspectiveDirection);
+                currentEl.style.transform = dynoRotate(windowSize);
         }
     };
-    function dynoRotate(perspectiveStart,perspectiveDirection) {
-        var degree = window.innerWidth < perspectiveStart ? Math.round(Math.abs((window.innerWidth - perspectiveStart) / 10)) : 0 ;      
+    function dynoRotate(windowSize) {
+        var degree = windowSize < perspectiveStart ? Math.round(Math.abs((windowSize - perspectiveStart) / 10)) : 0 ;      
         
       return 'rotate' + perspectiveDirection +'(' + degree + 'deg)';
     }
