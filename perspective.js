@@ -1,38 +1,26 @@
-var el = document.getElementsByClassName('perspectiveMe'),
-    perspectiveSize = '400px',
-    wrapperType = 'div',
-    wrapperSize = '1px',
-    perspectiveTransition = '1s',
-    perspectiveStart = 1024;
-
-for (var i = 0; i < el.length; i++) {
-    var currentEl = el[i];
-    wrap(currentEl, document.createElement(wrapperType));
-    var wrapper = currentEl.parentElement;
-    var style = getComputedStyle(currentEl);
-    wrapper.style.perspective = perspectiveSize;
-    wrapper.style.width = wrapperSize;
-    currentEl.style.transition = perspectiveTransition;
-}
-
-window.onresize = function () {
-    var degree = Math.round(Math.abs((window.innerWidth - perspectiveStart) / 10));
-
-    for (var i = 0; i < el.length; i++) {
+(function (el) {
+    var perspectiveStart = 1024;
+    window.onresize = function () {
+        for (var i = 0; i < el.length; i++) {
+            var currentEl = el[i];
+            var wrapperEl = wrap(currentEl, document.createElement('div'));
+            wrapperEl.style.perspective = '400px';
+            wrapperEl.style.width = '1px';
+            currentEl.style.transition = '1s';
+            el[i].style.transform = dynoRotate(perspectiveStart);
+        }
+    };
+    function dynoRotate(perspectiveStart) {
+        var degree = 0;
         if (window.innerWidth < perspectiveStart) {
-            el[i].style.transform = dynoRotate(degree);
+            degree = Math.round(Math.abs((window.innerWidth - perspectiveStart) / 10));
         }
-        else {
-            el[i].style.transform = dynoRotate(0);
-        }
+        return 'rotateY(' + degree + 'deg)';
     }
-};
 
-function dynoRotate(deg) {
-    return 'rotateY(' + deg + 'deg)';
-}
-
-function wrap(el, wrapper) {
-    el.parentNode.insertBefore(wrapper, el);
-    wrapper.appendChild(el);
-}
+    function wrap(el, wrapper) {
+        wrapperEl = el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+        return wrapperEl;
+    }
+})(document.getElementsByClassName('perspectiveMe'));
