@@ -13,11 +13,9 @@
         }
     };
     function dynoRotate(perspectiveStart,perspectiveDirection) {
-        var degree = 0;
-        if (window.innerWidth < perspectiveStart) {
-            degree = Math.round(Math.abs((window.innerWidth - perspectiveStart) / 10));
-        }
-        return 'rotate' + perspectiveDirection +'(' + degree + 'deg)';
+        var degree = window.innerWidth < perspectiveStart ? Math.round(Math.abs((window.innerWidth - perspectiveStart) / 10)) : 0 ;      
+        
+      return 'rotate' + perspectiveDirection +'(' + degree + 'deg)';
     }
 
     function wrap(el, wrapper) {
