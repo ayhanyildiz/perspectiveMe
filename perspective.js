@@ -1,4 +1,5 @@
 (function (el) {
+  'use strict';
     var perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ''
   
@@ -15,13 +16,12 @@
     };
     function dynoRotate(windowSize) {
         var degree = windowSize < perspectiveStart ? Math.round(Math.abs((windowSize - perspectiveStart) / 10)) : 0 ;      
-        
-      return 'rotate' + perspectiveDirection +'(' + degree + 'deg)';
+        return 'rotate' + perspectiveDirection +'(' + degree + 'deg)';
     }
 
     function wrap(el, wrapper) {
-        wrapperEl = el.parentNode.insertBefore(wrapper, el);
-        wrapper.appendChild(el);
-        return wrapperEl;
+        var wrapperEl = el.parentNode.insertBefore(wrapper, el);
+            wrapper.appendChild(el);
+            return wrapperEl;
     }
 })(document.getElementsByClassName('perspectiveMe'));
