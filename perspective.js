@@ -1,7 +1,7 @@
 (function (el) {
     'use strict';
     var perspectiveStart = 1024,
-        perspectiveDirection = 'Y';//'X' or ''
+        perspectiveDirection = 'Y';//'X' or ' '
 
     window.onresize = function () {
         var windowSize = window.innerWidth;
