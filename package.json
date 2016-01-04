@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ayhanyildiz/perspectiveMe/issues"
   },
-  "homepage": "https://github.com/ayhanyildiz/perspectiveMe#readme"
+  "homepage": "https://github.com/ayhanyildiz/perspectiveMe#readme",
+  "devDependencies": {
+
+  }
 }

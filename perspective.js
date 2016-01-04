@@ -1,8 +1,8 @@
 (function (el) {
     'use strict';
+
     var perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ' '
-
     window.onresize = function () {
         var windowSize = window.innerWidth;
         for (var i = 0; i < el.length; i++) {
@@ -12,15 +12,15 @@
             // wrapperEl.style.width = '200px';
             // currentEl.style.transition = '1s';
             // currentEl.style.transform = dynoRotate(windowSize);
-            wrapperEl.setAttribute("style","perspective : 400px; width : 200px;");
-            currentEl.setAttribute("style","transition : 1s; transform : "  + dynoRotate(windowSize) + "");
+            currentEl.setAttribute("style", "transition : 1s; transform : " + dynoRotate(windowSize) + "");
+            wrapperEl.setAttribute("style", "perspective : 400px; width : 200px;");
 
         }
     };
     function dynoRotate(windowSize) {
-        var degree = windowSize < perspectiveStart ? Math.round(Math.abs((windowSize - perspectiveStart) / 10)) : 0 ;
+        var degree = windowSize < perspectiveStart ? Math.round(Math.abs((windowSize - perspectiveStart) / 10)) : 0;
 
-        return 'rotate' + perspectiveDirection +'(' + degree + 'deg)';
+        return 'rotate' + perspectiveDirection + '(' + degree + 'deg)';
     }
 
     function wrap(el, wrapper) {
