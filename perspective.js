@@ -5,10 +5,13 @@
     window.onresize = function () {
         var windowSize = window.innerWidth;
         for (var i = 0; i < el.length; i++) {
-            var currentEl = el[i],
-                wrapperEl = wrap(currentEl, document.createElement('div'));
+            var currentEl = el[i];
+            if(!document.getElementsByClassName('perspectiveWrap')[i]){
+                var wrapperEl = wrap(currentEl, document.createElement('div'));
+                wrapperEl.classList.add('perspectiveWrap');
+                wrapperEl.setAttribute("style", "perspective : 400px; width : 200px;");
+            }
             currentEl.setAttribute("style", "transition : 1s; transform : " + dynoRotate(windowSize) + "");
-            wrapperEl.setAttribute("style", "perspective : 400px; width : 200px;");
         }
     };
     function dynoRotate(windowSize) {
@@ -23,8 +26,3 @@
         return wrapperEl;
     }
 })(document.getElementsByClassName('perspectiveMe'));
-
-
-
-
-
