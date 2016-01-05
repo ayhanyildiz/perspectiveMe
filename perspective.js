@@ -6,7 +6,7 @@
         var windowSize = window.innerWidth;
         for (var i = 0; i < el.length; i++) {
             var currentEl = el[i];
-            if(!document.getElementsByClassName('perspectiveWrap')[i]){
+            if(currentEl.parentNode.classList[0] !== 'perspectiveWrap'){
                 var wrapperEl = wrap(currentEl, document.createElement('div'));
                 wrapperEl.classList.add('perspectiveWrap');
                 wrapperEl.setAttribute("style", "perspective : 400px; width : 200px;");
