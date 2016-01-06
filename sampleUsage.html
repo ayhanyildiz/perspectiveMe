@@ -8,7 +8,7 @@
 <body>
 
 
-    <figure class="perspectiveMe">
+    <figure class="perspectiveMe">  <!-- single element  perspective -->
         <img src="http://lorempixel.com/200/200/nature" alt="Nature">
         <figcaption>Nature picture</figcaption>
     </figure>
@@ -16,14 +16,16 @@
         <img src="http://lorempixel.com/200/200/abstract" alt="Nature">
         <figcaption>Abstract image</figcaption>
     </figure>
-    <figure class="perspectiveMe">
-        <img src="http://lorempixel.com/200/200/animals" alt="Nature">
-        <figcaption>Animal photo</figcaption>
-    </figure>
-    <figure class="perspectiveMe">
-        <img src="http://lorempixel.com/200/200/city" alt="City">
-        <figcaption>City photo</figcaption>
-    </figure>
+    <div class="perspectiveMe"> <!-- multiple element perspective -->
+        <figure>
+            <img src="http://lorempixel.com/200/200/animals" alt="Nature">
+            <figcaption>Animal photo</figcaption>
+        </figure>
+        <figure class="perspectiveMe"> <!-- 2nd layer perspective -->
+            <img src="http://lorempixel.com/200/200/city" alt="City">
+            <figcaption>City photo</figcaption>
+        </figure>
+    </div>
 
 </body>
 </html>
