@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-    var el = document.getElementsByClassName('perspectiveMe');
-    var perspectiveStart = 1024,
+    var el = document.getElementsByClassName('perspectiveMe'),
+        perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ' '
     window.onresize = function () {
         var windowSize = window.innerWidth;
