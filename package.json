@@ -1,6 +1,6 @@
 {
   "name": "perspective",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "turn any element into perspective view with resizing window. This is written in pure JS, no dependencies.",
   "main": "perspective.js",
   "scripts": {
