@@ -1,5 +1,5 @@
 (function() {
-    'use strict';
+    'use strict'; //user3
     var el = document.getElementsByClassName('perspectiveMe'),
         perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ' '
