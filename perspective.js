@@ -4,7 +4,7 @@
         perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ' '
     window.onresize = function () {
-        var windowSize = window.innerWidth;
+        var windowSize = window.innerWidth;gi
         for (var i = 0; i < el.length; i++) {
             var currentEl = el[i];
             if(currentEl.parentNode.classList[0] !== 'perspectiveWrap'){
