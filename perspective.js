@@ -1,10 +1,12 @@
+
+
 (function() {
-    'use strict'; //userMe   sss
+    'use strict'; //user22
     var el = document.getElementsByClassName('perspectiveMe'),
         perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ' '
     window.onresize = function () {
-        var windowSize = window.innerWidth;gi
+        var windowSize = window.innerWidth;
         for (var i = 0; i < el.length; i++) {
             var currentEl = el[i];
             if(currentEl.parentNode.classList[0] !== 'perspectiveWrap'){
