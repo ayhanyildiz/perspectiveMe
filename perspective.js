@@ -1,5 +1,5 @@
 (function() {
-    'use strict'; //woshhgit git  something changed   lll    
+    'use strict'; //woshhgit git  something changed   lll   
          
     var el = document.getElementsByClassName('perspectiveMe'),
         perspectiveStart = 1024,
@@ -22,7 +22,7 @@
         return 'rotate' + perspectiveDirection + '(' + degree + 'deg)';
     }
 
-    function wrap(el, wrapper) {
+    function wrap(el, wrapper ) {
         var wrapperEl = el.parentNode.insertBefore(wrapper, el);
         wrapper.appendChild(el);
         return wrapperEl;
