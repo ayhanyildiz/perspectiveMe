@@ -1,5 +1,5 @@
 (function() {
-    'use strict'; //woshhgit git  something changed   lll   ss sss    
+    'use strict'; //woshhgit git  something changed   lll    
          
     var el = document.getElementsByClassName('perspectiveMe'),
         perspectiveStart = 1024,
