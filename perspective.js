@@ -22,7 +22,7 @@
         return 'rotate' + perspectiveDirection + '(' + degree + 'deg)';
     }
 
-    function wrap(el, wrapper ) {
+    function wrap(el, wrapper) {
         var wrapperEl = el.parentNode.insertBefore(wrapper, el);
         wrapper.appendChild(el);
         return wrapperEl;
