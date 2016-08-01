@@ -4,6 +4,7 @@
     var el = document.getElementsByClassName('perspectiveMe'),
         perspectiveStart = 1024,
         perspectiveDirection = 'Y';//'X' or ' '
+        perspectiveDirection = 'Y';//'X' or ' '
     window.onresize = function () {
         var windowSize = window.innerWidth;
         for (var i = 0; i < el.length; i++) {
@@ -22,6 +23,11 @@
         return 'rotate' + perspectiveDirection + '(' + degree + 'deg)';
     }
 
+    function wrap(el, wrapper ) {
+        var wrapperEl = el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+        return wrapperEl;
+    }
     function wrap(el, wrapper ) {
         var wrapperEl = el.parentNode.insertBefore(wrapper, el);
         wrapper.appendChild(el);
